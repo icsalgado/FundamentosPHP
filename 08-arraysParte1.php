@@ -25,7 +25,7 @@ echo "<hr>";
 //array associativo
 
 $cliente = array ("Nome" => "Iuri", "Idade" => 30, "Altura" => 1.72);
-$cliente ["Cidade"] = "Porto Alegre";
+$cliente ["Cidade"] = "Porto Alegre";//insere item no arrayy
 
 foreach ($cliente as $indice => $valor){
     echo $valor."<br>";
