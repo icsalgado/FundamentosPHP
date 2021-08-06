@@ -8,7 +8,7 @@
 </head>
 <body>
     <p><h1>Formulário de inscrição de competidor</h1></p>
-
+    <!--Enriquecendo formulario com a validação de dados-->
     <form action="script.php" method="post">
         <p>Seu nome: <input type="text" name="nome" /></p>
         <p>Sua idade: <input type="text" name="idade" /></p>
