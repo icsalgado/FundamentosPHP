@@ -1,3 +1,6 @@
+<?php
+    session_start(); //iniciado sempre no inicio do código
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,14 @@
     <p><h1>Formulário de inscrição de competidor</h1></p>
     <!--Enriquecendo formulario com a validação de dados-->
     <form action="script.php" method="post">
+        <?php
+            //isset (espera um valor)> verifica se a variavel de sessão está iniciada 
+            //utilizando operador ternario [[isset ...  ?  ... : ]]
+            $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+            if(!empty($mensagemDeErro)){
+                echo $mensagemDeErro;
+            } 
+        ?>
         <p>Seu nome: <input type="text" name="nome" /></p>
         <p>Sua idade: <input type="text" name="idade" /></p>
         <p><input type="submit" value="Enviar dados do competidor" /></p>

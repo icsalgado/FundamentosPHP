@@ -1,4 +1,5 @@
 <?php
+session_start(); //iniciar uma sessão http dentro do script
 
 $categorias = [];
 
@@ -12,23 +13,23 @@ $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 
 if(empty($nome)){ //empty verifica se a string está vazia
-    echo 'O nome não pode ser vazio';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio, preencha-o novamente';//['array associativo'] 
+    header ("location: formulario.php"); //mantem o fluxo dentro do formulário mesmo executando o script.php
 }
 
 if(strlen($nome)<3){//tamanho do nome não pode ser menor que 3
-    echo 'O nome precisa ter mais de 3 caracteres';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'O nome precisa ter mais de 3 caracteres';
+    header ("location: formulario.php");
 }
 
 if(strlen($nome)>40){//nome não pode ser maior que 40
-    echo 'Nome muito extenso';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'Nome muito extenso';
+    header ("location: formulario.php");
 }
 
 if(!is_numeric($idade)){//verifica se é não é uma string numérica
-    echo 'idade inválida, insira um numero inteiro!';
-    return; 
+    $_SESSION['mensagem-de-erro'] = 'idade inválida, insira um numero inteiro!';
+    header ("location: formulario.php");
 }
 
 //var_dump($nome);
