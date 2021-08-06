@@ -26,6 +26,11 @@ if(strlen($nome)>40){//nome não pode ser maior que 40
     return;
 }
 
+if(!is_numeric($idade)){//verifica se é não é uma string numérica
+    echo 'idade inválida, insira um numero inteiro!';
+    return; 
+}
+
 //var_dump($nome);
 //var_dump($idade);
 
