@@ -14,11 +14,16 @@
     <!--Enriquecendo formulario com a validação de dados-->
     <form action="script.php" method="post">
         <?php
+            //tratando a mensagem de sucesso
+            $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+            if(!empty($mensagemDeSucesso)){
+                echo $mensagemDeSucesso;
+            } 
             //isset (espera um valor)> verifica se a variavel de sessão está iniciada 
             //utilizando operador ternario [[isset ...  ?  ... : ]]
-            $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
-            if(!empty($mensagemDeErro)){
-                echo $mensagemDeErro;
+            $mensagemDeSucesso = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+            if(!empty($mensagemDeSucesso)){
+                echo $mensagemDeSucesso;
             } 
         ?>
         <p>Seu nome: <input type="text" name="nome" /></p>
