@@ -30,3 +30,14 @@ $cliente ["Cidade"] = "Porto Alegre";//insere item no arrayy
 foreach ($cliente as $indice => $valor){
     echo $valor."<br>";
 }
+
+//arrays multidimensionais 
+
+$times = array(
+    "cariocas"=> array("flamengo", "vasco"),
+    "gauchos"=> array("internaciona", "gremio")
+);
+
+echo $times["cariocas"][1];
+var_dump ($times);
+print_r ($times);
