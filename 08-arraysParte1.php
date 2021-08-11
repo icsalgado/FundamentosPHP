@@ -16,7 +16,7 @@ echo count($carros);//conta quantos indices tem no array
 
 echo "<br>";
 
-foreach ($carros as $valor){//varredura do array
+foreach ($carros as $valor){//varredura do array cada elemento do array carros vai ser atribuido a variavel valor
     echo $valor."<br>";
 }
 
