@@ -23,11 +23,12 @@
             } 
             //isset (espera um valor)> verifica se a variavel de sessão está iniciada 
             //utilizando operador ternario [[isset ...  ?  ... : ]]
-            $mensagemDeSucesso = obterMensagemErro();
+            $mensagemDeErro = obterMensagemErro();
             //isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
-            if(!empty($mensagemDeSucesso)){
-                echo $mensagemDeSucesso;
-            } 
+            if(!empty($mensagemDeErro)){
+                echo $mensagemDeErro;
+            }
+
         ?>
         <p>Seu nome: <input type="text" name="nome" /></p>
         <p>Sua idade: <input type="text" name="idade" /></p>

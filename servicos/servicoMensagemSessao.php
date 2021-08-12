@@ -38,5 +38,3 @@ function removerMensagemSucesso() : void
     if(isset($_SESSION['mensagem-de-sucesso'])) 
         unset($_SESSION['mensagem-de-sucesso']);
 }
-
-
