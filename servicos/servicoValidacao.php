@@ -29,6 +29,11 @@ function validaIdade(string $idade) : bool
         //header ("location: formulario.php");
         return false;
     }
+    else if($idade < 6 || $idade > 25)//verificação de faixa etária
+    {
+        setarMensagemErro('idade inválida, Fora da faixa etaria aceita!');
+        return false;
+    }
     return true;
 }
 
