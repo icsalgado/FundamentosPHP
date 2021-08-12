@@ -1,5 +1,6 @@
 <?php
-    session_start(); //iniciado sempre no inicio do código
+    //session_start(); //iniciado sempre no inicio do código
+    include "servicos/servicoMensagemSessao.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +16,15 @@
     <form action="script.php" method="post">
         <?php
             //tratando a mensagem de sucesso
-            $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+            $mensagemDeSucesso = obterMensagemSucesso();
+            //isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
             if(!empty($mensagemDeSucesso)){
                 echo $mensagemDeSucesso;
             } 
             //isset (espera um valor)> verifica se a variavel de sessão está iniciada 
             //utilizando operador ternario [[isset ...  ?  ... : ]]
-            $mensagemDeSucesso = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+            $mensagemDeSucesso = obterMensagemErro();
+            //isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
             if(!empty($mensagemDeSucesso)){
                 echo $mensagemDeSucesso;
             } 

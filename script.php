@@ -1,17 +1,27 @@
 <?php
-session_start(); //iniciar uma sessão http dentro do script
-
+///session_start(); //iniciar uma sessão http dentro do script
+include "servicos/servicoMensagemSessao.php";
+include "servicos/servicoValidacao.php"; 
+include "servicos/servicoCategoriaCompetidor.php"; 
+/*
+    *Aqui foi pro servicoCategoriaCompetidor.php
 $categorias = [];
 
 $categorias [] = 'infantil';
 $categorias [] = 'adolecente';
 $categorias [] = 'adulto';
-
+ */
 //print_r($categorias);
 
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 
+defineCategoriaCompetidor($nome, $idade);
+
+header('location: formulario.php');
+
+/* 
+    *Tudo foi passado para servicoValidacao.php
 if(empty($nome)){ //empty verifica se a string está vazia
     $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio, preencha-o novamente';//['array associativo'] 
     header ("location: formulario.php"); //mantem o fluxo dentro do formulário mesmo executando o script.php
@@ -34,11 +44,13 @@ else if(!is_numeric($idade)){//verifica se é não é uma string numérica
     $_SESSION['mensagem-de-erro'] = 'idade inválida, insira um numero inteiro!';
     header ("location: formulario.php");
     return;
-}
+} */
 
 //var_dump($nome);
 //var_dump($idade);
 
+/*
+    *Aqui foi pro servicoCategoriaCompetidor.php
 if ($idade >= 6 && $idade <= 12){
     $_SESSION['mensagem-de-sucesso'] = "O nadador $nome compete na categoria infantil"; //criada a chave no array de sessão da mensagem de sucesso
     header ("location: formulario.php");
@@ -54,4 +66,4 @@ else {
     $_SESSION['mensagem-de-sucesso'] = "O nadador $nome compete na categoria adulto";
     header ("location: formulario.php");
     return;
-}
+} */
